@@ -1,0 +1,32 @@
+﻿  JoueurContract.cpp
+c:\users\maxime\documents\visual studio 2015\projects\golfier_maxime_poo\golfier_maxime_poo\autonome.h(10): error C2504: 'JoueurContract' : classe de base non définie
+c:\users\maxime\documents\visual studio 2015\projects\golfier_maxime_poo\golfier_maxime_poo\heteronome.h(9): error C2504: 'JoueurContract' : classe de base non définie
+  Heteronome.cpp
+c:\users\maxime\documents\visual studio 2015\projects\golfier_maxime_poo\golfier_maxime_poo\autonome.h(10): error C2504: 'JoueurContract' : classe de base non définie
+  Génération de code en cours...
+  Compilation en cours...
+  Affichage.cpp
+  Génération de code en cours...
+  Compilation en cours...
+  main.cpp
+  TitreGagne.cpp
+  Rupture.cpp
+  Rencontre.cpp
+  NouvObjet.cpp
+  Negociateur.cpp
+  NegoVendeur.cpp
+  NegoAcheteur.cpp
+  Match.cpp
+  LigueSoccer.cpp
+  Equipe.cpp
+  Entraineur.cpp
+  Contrat.cpp
+  Club.cpp
+  Chargement.cpp
+  Calendrier.cpp
+  Autonome.cpp
+  Génération de code en cours...
+  Ignoré... (aucune modification pertinente détectée)
+  Sportif.cpp
+  Joueur.cpp
+  Arbitre.cpp

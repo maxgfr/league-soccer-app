@@ -1,0 +1,6 @@
+club1
+j1%joueur2%joueur2%170%170%
+FINclub1
+club2
+j2%joueurclub22%joueurclub22%189%189%
+FINclub2

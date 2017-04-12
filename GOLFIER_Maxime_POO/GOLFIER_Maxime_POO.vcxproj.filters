@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers sources\modele">
+      <UniqueIdentifier>{d34b71a8-aa66-4d1d-a672-9703dc78e0e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\modele">
+      <UniqueIdentifier>{ade50bea-d33e-42b1-b561-5e0db852f26a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\view">
+      <UniqueIdentifier>{5294366b-3fda-441f-aa3c-084bdc3e689e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\launch">
+      <UniqueIdentifier>{689fe1dc-37e6-46a4-83ca-0e23d748e65c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\view">
+      <UniqueIdentifier>{2fd3b589-894d-43c2-a814-95ae6e23c023}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\launch">
+      <UniqueIdentifier>{58c1bcc8-f6a7-423c-ba69-aa0fc16fce1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\modele\elements">
+      <UniqueIdentifier>{bb24c691-3c43-43c6-9efe-8a6bcb59d0d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\modele\individus">
+      <UniqueIdentifier>{b1898e3e-035c-492a-8c8e-6f9043590677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\modele\elements">
+      <UniqueIdentifier>{9eea2542-edd5-4b5a-8d83-03d3b785f4c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\modele\evenements">
+      <UniqueIdentifier>{76def2c5-9f66-4ec1-ae7c-a6bc72553728}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\modele\evenements">
+      <UniqueIdentifier>{8cee7d93-e135-485d-ae82-a4817e69e2ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\modele\transfert">
+      <UniqueIdentifier>{b50f1ae0-7927-4fff-905d-adc005d4643c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\modele\transfert">
+      <UniqueIdentifier>{450a0596-97c9-432b-8919-58669b213a8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\modele\affrontement">
+      <UniqueIdentifier>{03af6397-258b-4b3e-ba20-e32fc2f54b5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\modele\affrontement">
+      <UniqueIdentifier>{e131174b-3dc2-456e-b8b3-918742056cd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\modele\individus\specification">
+      <UniqueIdentifier>{020c9222-ab58-4ab4-a049-c9fd0f9c1300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\modele\individus">
+      <UniqueIdentifier>{7e7b9de0-1e65-4ae8-ba4c-e513ba1e3e72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\modele\individus\specification">
+      <UniqueIdentifier>{b67df380-3ff7-446f-afbb-f888e3168296}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\gestion">
+      <UniqueIdentifier>{eed727bc-a09e-4a58-bba3-c6c6afcda962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\gestion">
+      <UniqueIdentifier>{187af1ef-e590-4402-b2d2-71ba617c8a67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\systeme">
+      <UniqueIdentifier>{9ed3825b-f513-4ffe-8ca7-9917748c8ab3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\systeme">
+      <UniqueIdentifier>{89198bd1-c9bd-4214-bd4d-f932729e8f58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\modele\negociation">
+      <UniqueIdentifier>{10db2c1d-f8b5-46cf-8500-0507ed13804b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\modele\negociation">
+      <UniqueIdentifier>{6c4a48a1-d571-4df4-9cf5-1113dd989f59}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LigueSoccer.h">
+      <Filter>Fichiers d%27en-tête\modele</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Fichiers d%27en-tête\launch</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Fichiers d%27en-tête\launch</Filter>
+    </ClInclude>
+    <ClInclude Include="Affichage.h">
+      <Filter>Fichiers d%27en-tête\view</Filter>
+    </ClInclude>
+    <ClInclude Include="Personne.h">
+      <Filter>Fichiers d%27en-tête\modele\individus</Filter>
+    </ClInclude>
+    <ClInclude Include="Entraineur.h">
+      <Filter>Fichiers d%27en-tête\modele\individus</Filter>
+    </ClInclude>
+    <ClInclude Include="Joueur.h">
+      <Filter>Fichiers d%27en-tête\modele\individus</Filter>
+    </ClInclude>
+    <ClInclude Include="Club.h">
+      <Filter>Fichiers d%27en-tête\modele\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Stade.h">
+      <Filter>Fichiers d%27en-tête\modele\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>Fichiers d%27en-tête\modele\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Parcours.h">
+      <Filter>Fichiers d%27en-tête\modele\evenements</Filter>
+    </ClInclude>
+    <ClInclude Include="Palmares.h">
+      <Filter>Fichiers d%27en-tête\modele\evenements</Filter>
+    </ClInclude>
+    <ClInclude Include="TitreGagne.h">
+      <Filter>Fichiers d%27en-tête\modele\evenements</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum_Type.h">
+      <Filter>Fichiers d%27en-tête\modele\evenements</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum_Qualite.h">
+      <Filter>Fichiers d%27en-tête\modele\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum_Metier.h">
+      <Filter>Fichiers d%27en-tête\modele\individus</Filter>
+    </ClInclude>
+    <ClInclude Include="Reglement.h">
+      <Filter>Fichiers d%27en-tête\modele\transfert</Filter>
+    </ClInclude>
+    <ClInclude Include="Rencontre.h">
+      <Filter>Fichiers d%27en-tête\modele\affrontement</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipe.h">
+      <Filter>Fichiers d%27en-tête\modele\affrontement</Filter>
+    </ClInclude>
+    <ClInclude Include="Match.h">
+      <Filter>Fichiers d%27en-tête\modele\affrontement</Filter>
+    </ClInclude>
+    <ClInclude Include="Periode.h">
+      <Filter>Fichiers d%27en-tête\modele\affrontement</Filter>
+    </ClInclude>
+    <ClInclude Include="Resultat.h">
+      <Filter>Fichiers d%27en-tête\modele\affrontement</Filter>
+    </ClInclude>
+    <ClInclude Include="Rupture.h">
+      <Filter>Fichiers d%27en-tête\modele\transfert</Filter>
+    </ClInclude>
+    <ClInclude Include="Arbitre.h">
+      <Filter>Fichiers d%27en-tête\modele\individus</Filter>
+    </ClInclude>
+    <ClInclude Include="Sportif.h">
+      <Filter>Fichiers d%27en-tête\modele\individus</Filter>
+    </ClInclude>
+    <ClInclude Include="Heteronome.h">
+      <Filter>Fichiers d%27en-tête\modele\individus\specification</Filter>
+    </ClInclude>
+    <ClInclude Include="Autonome.h">
+      <Filter>Fichiers d%27en-tête\modele\individus\specification</Filter>
+    </ClInclude>
+    <ClInclude Include="Contrat.h">
+      <Filter>Fichiers d%27en-tête\modele\transfert</Filter>
+    </ClInclude>
+    <ClInclude Include="Calendrier.h">
+      <Filter>Fichiers d%27en-tête\modele</Filter>
+    </ClInclude>
+    <ClInclude Include="Chargement.h">
+      <Filter>Fichiers d%27en-tête\gestion</Filter>
+    </ClInclude>
+    <ClInclude Include="NouvObjet.h">
+      <Filter>Fichiers d%27en-tête\view</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Fichiers d%27en-tête\systeme</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Fichiers d%27en-tête\systeme</Filter>
+    </ClInclude>
+    <ClInclude Include="NegoAcheteur.h">
+      <Filter>Fichiers d%27en-tête\modele\negociation</Filter>
+    </ClInclude>
+    <ClInclude Include="Negociateur.h">
+      <Filter>Fichiers d%27en-tête\modele\negociation</Filter>
+    </ClInclude>
+    <ClInclude Include="Negociation.h">
+      <Filter>Fichiers d%27en-tête\modele\negociation</Filter>
+    </ClInclude>
+    <ClInclude Include="NegoVendeur.h">
+      <Filter>Fichiers d%27en-tête\modele\negociation</Filter>
+    </ClInclude>
+    <ClInclude Include="Mutex.h">
+      <Filter>Fichiers d%27en-tête\systeme</Filter>
+    </ClInclude>
+    <ClInclude Include="JoueurContract.h">
+      <Filter>Fichiers d%27en-tête\modele\individus\specification</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LigueSoccer.cpp">
+      <Filter>Fichiers sources\modele</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Fichiers sources\launch</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Fichiers sources\launch</Filter>
+    </ClCompile>
+    <ClCompile Include="Affichage.cpp">
+      <Filter>Fichiers sources\view</Filter>
+    </ClCompile>
+    <ClCompile Include="Joueur.cpp">
+      <Filter>Fichiers sources\modele\individus</Filter>
+    </ClCompile>
+    <ClCompile Include="Entraineur.cpp">
+      <Filter>Fichiers sources\modele\individus</Filter>
+    </ClCompile>
+    <ClCompile Include="Personne.cpp">
+      <Filter>Fichiers sources\modele\individus</Filter>
+    </ClCompile>
+    <ClCompile Include="Club.cpp">
+      <Filter>Fichiers sources\modele\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="Stade.cpp">
+      <Filter>Fichiers sources\modele\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="Palmares.cpp">
+      <Filter>Fichiers sources\modele\evenements</Filter>
+    </ClCompile>
+    <ClCompile Include="TitreGagne.cpp">
+      <Filter>Fichiers sources\modele\evenements</Filter>
+    </ClCompile>
+    <ClCompile Include="Date.cpp">
+      <Filter>Fichiers sources\modele\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="Parcours.cpp">
+      <Filter>Fichiers sources\modele\evenements</Filter>
+    </ClCompile>
+    <ClCompile Include="Reglement.cpp">
+      <Filter>Fichiers sources\modele\transfert</Filter>
+    </ClCompile>
+    <ClCompile Include="Rencontre.cpp">
+      <Filter>Fichiers sources\modele\affrontement</Filter>
+    </ClCompile>
+    <ClCompile Include="Equipe.cpp">
+      <Filter>Fichiers sources\modele\affrontement</Filter>
+    </ClCompile>
+    <ClCompile Include="Match.cpp">
+      <Filter>Fichiers sources\modele\affrontement</Filter>
+    </ClCompile>
+    <ClCompile Include="Periode.cpp">
+      <Filter>Fichiers sources\modele\affrontement</Filter>
+    </ClCompile>
+    <ClCompile Include="Resultat.cpp">
+      <Filter>Fichiers sources\modele\affrontement</Filter>
+    </ClCompile>
+    <ClCompile Include="Rupture.cpp">
+      <Filter>Fichiers sources\modele\transfert</Filter>
+    </ClCompile>
+    <ClCompile Include="Arbitre.cpp">
+      <Filter>Fichiers sources\modele\individus</Filter>
+    </ClCompile>
+    <ClCompile Include="Sportif.cpp">
+      <Filter>Fichiers sources\modele\individus</Filter>
+    </ClCompile>
+    <ClCompile Include="Autonome.cpp">
+      <Filter>Fichiers sources\modele\individus\specification</Filter>
+    </ClCompile>
+    <ClCompile Include="Heteronome.cpp">
+      <Filter>Fichiers sources\modele\individus\specification</Filter>
+    </ClCompile>
+    <ClCompile Include="Contrat.cpp">
+      <Filter>Fichiers sources\modele\transfert</Filter>
+    </ClCompile>
+    <ClCompile Include="Calendrier.cpp">
+      <Filter>Fichiers sources\modele</Filter>
+    </ClCompile>
+    <ClCompile Include="Chargement.cpp">
+      <Filter>Fichiers sources\gestion</Filter>
+    </ClCompile>
+    <ClCompile Include="NouvObjet.cpp">
+      <Filter>Fichiers sources\view</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Fichiers sources\systeme</Filter>
+    </ClCompile>
+    <ClCompile Include="NegoAcheteur.cpp">
+      <Filter>Fichiers sources\modele\negociation</Filter>
+    </ClCompile>
+    <ClCompile Include="Negociateur.cpp">
+      <Filter>Fichiers sources\modele\negociation</Filter>
+    </ClCompile>
+    <ClCompile Include="Negociation.cpp">
+      <Filter>Fichiers sources\modele\negociation</Filter>
+    </ClCompile>
+    <ClCompile Include="NegoVendeur.cpp">
+      <Filter>Fichiers sources\modele\negociation</Filter>
+    </ClCompile>
+    <ClCompile Include="JoueurContract.cpp">
+      <Filter>Fichiers sources\modele\individus\specification</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
