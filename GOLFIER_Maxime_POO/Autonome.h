@@ -2,10 +2,8 @@
 #define AUTONOME_H
 
 #include "Joueur.h"
-#include "Rupture.h"
 #include "JoueurContract.h"
-class Contrat;
-class Rupture;
+#include "Rupture.h"
 
 class Autonome :  public JoueurContract, public Joueur
 {

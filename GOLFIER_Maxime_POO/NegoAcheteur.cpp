@@ -1,18 +1,21 @@
 #include "stdafx.h"
 #include "negoAcheteur.h"
+#include <math.h>
+
+#define PUISSANCE_NEGO 1000
 
 #pragma region Constructeur
 NegoAcheteur::NegoAcheteur()
 {
 }
 
-NegoAcheteur::NegoAcheteur(float mD, float mM, int d, Club *c, Mutex m) : Negociateur(mD, mM, d, c, m)
+NegoAcheteur::NegoAcheteur(float mD, float mM, int d, Club *c, Mutex m, Negociation *sauv) : Negociateur(mD, mM, d, c, m, sauv)
 {
 }
 
 NegoAcheteur::~NegoAcheteur()
 {
-	//delete representantClub;  => a été supprimé dans la base class
+	//tout a été supprimé dans la base class
 }
 #pragma endregion Constructeur
 
@@ -20,7 +23,7 @@ void NegoAcheteur::faireLeBusiness()
 {
 	//Le montant bloquant est le montant maximal
 	Timer timer;
-	float nouvMontant;
+	float nouvMontant,prixAdverse;
 
 	timer.Start();
 	
@@ -28,28 +31,31 @@ void NegoAcheteur::faireLeBusiness()
 
 		getMutex().Synchroniser();
 
-		if (getSauv()->isOkay()) // c'est okay pour le vendeur, le transfert à réussi
-		{
+		nouvMontant = getMontantDesire() + (timer.GetTicks() / PUISSANCE_NEGO); //variation du montant
+
+		prixAdverse = getSauv()->GetLastMontant();
+
+		if (nouvMontant >= prixAdverse && prixAdverse != NULL) { // c'est okay pour le vendeur, le transfert à réussi
 			getSauv()->Offre("accepter", "acheteur", "Marche conclu", timer.GetTicks() / CLOCKS_PER_SEC, nouvMontant);
 			setEtat(true);
+			return;
 		}
 
-		nouvMontant = getMontantDesire() + (timer.GetTicks() / 500); //variation du montant
+		if (getSauv()->isDeception()) { // si le vendeur refuse........
+			getSauv()->Offre("refuser", "acheteur", "Tu demandes trop de sous la ! Je suis desole mais le transfert est fini !", timer.GetTicks() / CLOCKS_PER_SEC, nouvMontant);
+			setEtat(true);
+			return;
+		}
 
-		if (nouvMontant < getMontantBloquant()) {	// plus petit que montant Max
+		if (nouvMontant <= getMontantBloquant()) {	// plus petit que montant Max
 			getSauv()->Offre("offre", "acheteur", "Je te propose une nouvelle offre", timer.GetTicks() / CLOCKS_PER_SEC, nouvMontant);
-		} 
-
-		else if (nouvMontant == getMontantBloquant()) {
-			getSauv()->Offre("accepter", "acheteur", "Marche conclu", timer.GetTicks() / CLOCKS_PER_SEC, nouvMontant);
+			
+		} else { //plus grand que le montant Max, c'est trop cher
+			getSauv()->Offre("refuser", "acheteur", "Je peux pas aller plus haut....", timer.GetTicks() / CLOCKS_PER_SEC, nouvMontant);
 			setEtat(true);
+			return;
 		}
-
-		else if (nouvMontant > getMontantBloquant()) { //plus grand que le montant Max, c'est trop cher
-			getSauv()->Offre("refuser", "acheteur", "Je te propose ma derniere offre", timer.GetTicks() / CLOCKS_PER_SEC, nouvMontant);
-			setEtat(true);
-		}
-		getSauv()->AfficheLastMessage();
+		
 		getMutex().Liberer();
 	}
 }

@@ -9,6 +9,7 @@ Negociation::Negociation()
 
 Negociation::~Negociation()
 {
+	discution.pop_back();
 }
 #pragma endregion constructeur
 
@@ -33,6 +34,7 @@ void Negociation::Offre(string sujet, string emetteur, string information, int t
 	m.emetteur = emetteur;
 	m.information = information;
 	AjoutMessage(m);
+	AfficheLastMessage();
 }
 
 void Negociation::AjoutMessage(Message m)
@@ -56,11 +58,11 @@ bool Negociation::AboutissementTransaction(Message m)
 {
 	if (m.sujet.compare("accepter") == 0)
 	{
-		cout << "- INFO : Transfert finialise avec un montant :" << m.montantOffre << " euros\n";
+		cout << "====== FINAL : Transfert finialise avec un montant :" << m.montantOffre << " euros ====== \n\n\n";
 		return true;
 	}
 	else {
-		cout << "- INFO : Transfert non finialise...\n";
+		cout << "====== FINAL : Le transfert fut un echec... ====== \n\n\n";
 		return false;
 	}
 }
@@ -79,11 +81,45 @@ bool Negociation::isOkay()
 {
 	int last = 0;
 	bool resultat = false;
-	last = discution.size()-1;
-	if (last < 0) { 
+	last = discution.size() - 1;
+	if (last < 0) {
 		resultat = false;
-	} else {
-		resultat = AboutissementTransaction(discution.at(last)); 
+	}
+	else {
+		resultat = AboutissementTransaction(discution.at(last));
 	}
 	return resultat;
+}
+
+bool Negociation::isDeception()
+{
+	int last = 0;
+	bool resultat = false;
+	last = discution.size() - 1;
+	if (last < 0) {
+		resultat = false;
+	}
+	else {
+		Message m = discution.at(last);
+		if (m.sujet.compare("refuser") == 0)
+		{
+			resultat = true;
+		}
+		else {
+			resultat = false;
+		}
+
+	}
+	return resultat;
+}
+
+float Negociation::GetLastMontant()
+{
+	int last = 0;
+	last = discution.size() - 1;
+	if (last < 0) {
+		return NULL;
+	}
+	Message m = discution.at(last);
+	return m.montantOffre;
 }

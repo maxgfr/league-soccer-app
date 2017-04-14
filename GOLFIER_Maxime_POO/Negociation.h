@@ -33,6 +33,10 @@ public:
 
 	bool isOkay();
 
+	bool isDeception();
+
+	float GetLastMontant();
+
 };
 
 #endif

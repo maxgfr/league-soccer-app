@@ -26,6 +26,7 @@
 #include "Negociation.h"
 #include "JoueurContract.h"
 #include "Sauvegarde.h"
+#include "Thread.h"
 
 using namespace std;
 
@@ -62,8 +63,8 @@ public:
 #pragma endregion TP2
 
 #pragma region TP3
-	static NegoAcheteur * nouvNegoAcheteur(LigueSoccer *lg, int duree, Mutex m);
-	static NegoVendeur * nouvNegoVendeur(LigueSoccer *lg, int duree, Mutex m);
+	static NegoAcheteur * nouvNegoAcheteur(LigueSoccer *lg, int duree, Mutex m, Negociation*);
+	static NegoVendeur * nouvNegoVendeur(LigueSoccer *lg, int duree, Mutex m, Negociation*);
 #pragma endregion TP3
 
 #pragma endregion nouvObjet

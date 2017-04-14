@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Autonome.h"
+#include "Rupture.h"
 
 #pragma region Constructeur
 Autonome::Autonome()

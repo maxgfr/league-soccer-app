@@ -8,11 +8,17 @@ inline string IntToString(const int &val)
 	return unflux.str();
 }
 
-void Sauvegarde::EnregistrerJoueur(vector<Joueur*> liste)
+void Sauvegarde::EnregistrerJoueur(vector<Joueur*> liste, string nomClub)
 {
 	string taille, nom, prenom, ville, poids;
 	vector<Joueur*>::iterator it;
-	ofstream fichierJoueurs("../joueurs.txt", ios::out);
+	ofstream fichierJoueurs("../joueurs.txt", ios::app);
+
+	fichierJoueurs.write(nomClub.c_str(), (streamsize)nomClub.size());
+	if (liste.size() > 0) {
+		fichierJoueurs.write("\n", 1);
+	}
+
 	for (it = liste.begin(); it != liste.end(); it++)
 	{
 		taille = IntToString(static_cast<int>((*it)->getTaille()));
@@ -20,7 +26,7 @@ void Sauvegarde::EnregistrerJoueur(vector<Joueur*> liste)
 		prenom = (*it)->getNom();
 		ville = (*it)->getNom();
 		poids = IntToString(static_cast<int>((*it)->getTaille()));
-		vector<Parcours*> vec = (*it)->getParcoursJoueur();
+		vector<Parcours*> vec = (*it)->getParcoursJoueur();		
 
 		fichierJoueurs.write(nom.c_str(), (streamsize)nom.size());
 		fichierJoueurs.write("%", 1);
@@ -32,17 +38,26 @@ void Sauvegarde::EnregistrerJoueur(vector<Joueur*> liste)
 		fichierJoueurs.write("%", 1);
 		fichierJoueurs.write(poids.c_str(), (streamsize)poids.size());
 		fichierJoueurs.write("%", 1);
-		EnregistrerParcours(vec);
-
-		fichierJoueurs.write("\n", 1);
+		EnregistrerParcours(vec, nomClub);
 	}
+
+	fichierJoueurs.write("\n", 1);
+	fichierJoueurs.write(("FIN"+nomClub).c_str(), (streamsize)nomClub.size() + 3);
+	fichierJoueurs.write("\n", 1);
+
 	fichierJoueurs.close();
 }
 
-void Sauvegarde::EnregistrerParcours(vector<Parcours*> liste) {
+void Sauvegarde::EnregistrerParcours(vector<Parcours*> liste, string nomClu) {
 	string jour, mois, annee, nomClubAct, nomClub;
 	vector<Parcours*>::iterator it;
-	ofstream fichierJoueurs("../parcours.txt", ios::out);
+	ofstream fichierJoueurs("../parcours.txt", ios::app);
+
+	fichierJoueurs.write(nomClu.c_str(), (streamsize)nomClu.size());
+	if (liste.size() > 0) {
+		fichierJoueurs.write("\n", 1);
+	}
+
 	for (it = liste.begin(); it != liste.end(); it++)
 	{
 		nomClubAct = (*it)->getNomClubActuel();
@@ -50,6 +65,7 @@ void Sauvegarde::EnregistrerParcours(vector<Parcours*> liste) {
 		jour = IntToString((*it)->getDate()->getJour());
 		mois = IntToString((*it)->getDate()->getMois());
 		annee = IntToString((*it)->getDate()->getAnnee());
+
 		fichierJoueurs.write(nomClubAct.c_str(), (streamsize)nomClubAct.size());
 		fichierJoueurs.write("%", 1);
 		fichierJoueurs.write(nomClub.c_str(), (streamsize)nomClub.size());
@@ -60,15 +76,25 @@ void Sauvegarde::EnregistrerParcours(vector<Parcours*> liste) {
 		fichierJoueurs.write("%", 1);
 		fichierJoueurs.write(annee.c_str(), (streamsize)annee.size());
 		fichierJoueurs.write("%", 1);
-		fichierJoueurs.write("\n", 1);
 	}
+
+	fichierJoueurs.write("\n", 1);
+	fichierJoueurs.write(("FIN" + nomClu).c_str(), (streamsize)nomClu.size() + 3);
+	fichierJoueurs.write("\n", 1);
+
 	fichierJoueurs.close();
 }
 
-void Sauvegarde::EnregistrerPersonne(vector<Personne*> liste) {
+void Sauvegarde::EnregistrerPersonne(vector<Personne*> liste, string nomClub) {
 	string age, metier, nom, poids;
 	vector<Personne*>::iterator it;
-	ofstream fichierJoueurs("../personne.txt", ios::out);
+	ofstream fichierJoueurs("../personne.txt", ios::app);
+
+	fichierJoueurs.write(nomClub.c_str(), (streamsize)nomClub.size());
+	if (liste.size() > 0) {
+		fichierJoueurs.write("\n", 1);
+	}
+
 	for (it = liste.begin(); it != liste.end(); it++)
 	{
 		age = IntToString((*it)->getAge());
@@ -84,15 +110,25 @@ void Sauvegarde::EnregistrerPersonne(vector<Personne*> liste) {
 		fichierJoueurs.write("%", 1);
 		fichierJoueurs.write(poids.c_str(), (streamsize)poids.size());
 		fichierJoueurs.write("%", 1);
-		fichierJoueurs.write("\n", 1);
 	}
+
+	fichierJoueurs.write("\n", 1);
+	fichierJoueurs.write(("FIN" + nomClub).c_str(), (streamsize)nomClub.size() + 3);
+	fichierJoueurs.write("\n", 1);
+
 	fichierJoueurs.close();
 }
 
-void Sauvegarde::EnregistrerPalmares(vector<Palmares*> liste) {
+void Sauvegarde::EnregistrerPalmares(vector<Palmares*> liste, string nomClub) {
 	string titre, type, jour, mois, annee;
 	vector<Palmares*>::iterator it;
-	ofstream fichierJoueurs("../palmares.txt", ios::out);
+	ofstream fichierJoueurs("../palmares.txt", ios::app);
+
+	fichierJoueurs.write(nomClub.c_str(), (streamsize)nomClub.size());
+	if (liste.size() > 0) {
+		fichierJoueurs.write("\n", 1);
+	}
+
 	for (it = liste.begin(); it != liste.end(); it++)
 	{
 		titre = (*it)->getTitre();
@@ -111,12 +147,17 @@ void Sauvegarde::EnregistrerPalmares(vector<Palmares*> liste) {
 		fichierJoueurs.write("%", 1);
 		fichierJoueurs.write(annee.c_str(), (streamsize)annee.size());
 		fichierJoueurs.write("%", 1);
-		fichierJoueurs.write("\n", 1);
+
 	}
+
+	fichierJoueurs.write("\n", 1);
+	fichierJoueurs.write(("FIN" + nomClub).c_str(), (streamsize)nomClub.size() + 3);
+	fichierJoueurs.write("\n", 1);
+
 	fichierJoueurs.close();
 }
 
-void Sauvegarde::EnregistrerContrat(vector<Contrat*> liste) {
+void Sauvegarde::EnregistrerContrat(vector<Contrat*> liste, string nomClub) {
 	string adresse1, nom1, couleur1, histoire1, ville1;
 	string adresse2, nom2, couleur2, histoire2, ville2;
 	string nomj, prenomj, taillej, villej;
@@ -125,7 +166,13 @@ void Sauvegarde::EnregistrerContrat(vector<Contrat*> liste) {
 	string jour2, mois2, annee2;
 	string duree;
 	vector<Contrat*>::iterator it;
-	ofstream fichierJoueurs("../contrat.txt", ios::out);
+	ofstream fichierJoueurs("../contrat.txt", ios::app);
+
+	fichierJoueurs.write(nomClub.c_str(), (streamsize)nomClub.size());
+	if (liste.size() > 0) {
+		fichierJoueurs.write("\n", 1);
+	}
+
 	for (it = liste.begin(); it != liste.end(); it++)
 	{
 		adresse1 = (*it)->getClubContractant()->getAdresseClub();
@@ -211,19 +258,29 @@ void Sauvegarde::EnregistrerContrat(vector<Contrat*> liste) {
 		fichierJoueurs.write(mois2.c_str(), (streamsize)mois2.size());
 		fichierJoueurs.write("%", 1);
 		fichierJoueurs.write(annee2.c_str(), (streamsize)annee2.size());
-		fichierJoueurs.write("%", 1);
-		fichierJoueurs.write("\n", 1);
+		fichierJoueurs.write("%", 1);	
 	}
+
+	fichierJoueurs.write("\n", 1);
+	fichierJoueurs.write(("FIN" + nomClub).c_str(), (streamsize)nomClub.size() + 3);
+	fichierJoueurs.write("\n", 1);
+
 	fichierJoueurs.close();
 }
 
-void Sauvegarde::EnregistrerRupture(vector<Rupture*> liste) {
+void Sauvegarde::EnregistrerRupture(vector<Rupture*> liste, string nomClub) {
 	string adresse1, nom1, couleur1, histoire1, ville1;
 	string nomj, prenomj, taillej, villej;
 	string penalite;
 	string raison;
 	vector<Rupture*>::iterator it;
-	ofstream fichierJoueurs("../rupture.txt", ios::out);
+	ofstream fichierJoueurs("../rupture.txt", ios::app);
+
+	fichierJoueurs.write(nomClub.c_str(), (streamsize)nomClub.size());
+	if (liste.size() > 0) {
+		fichierJoueurs.write("\n", 1);
+	}
+
 	for (it = liste.begin(); it != liste.end(); it++)
 	{
 		raison = (*it)->getRaisonDep();
@@ -262,8 +319,12 @@ void Sauvegarde::EnregistrerRupture(vector<Rupture*> liste) {
 		fichierJoueurs.write("%", 1);
 		fichierJoueurs.write(villej.c_str(), (streamsize)villej.size());
 		fichierJoueurs.write("%", 1);
-		fichierJoueurs.write("\n", 1);
 	}
+
+	fichierJoueurs.write("\n", 1);
+	fichierJoueurs.write(("FIN" + nomClub).c_str(), (streamsize)nomClub.size() + 3);
+	fichierJoueurs.write("\n", 1);
+
 	fichierJoueurs.close();
 }
 
@@ -273,6 +334,22 @@ void Sauvegarde::EnregistrerClub(vector<Club*> liste) {
 	string adresseS, nomS, qualiteS;
 	vector<Club*>::iterator it;
 	ofstream fichierJoueurs("../club.txt", ios::out);
+
+	//vider les fichiers pour la sauvegarde grâce à l'ouverture en out
+	ofstream fichierA("../rupture.txt", ios::out);
+	ofstream fichierB("../contrat.txt", ios::out);
+	ofstream fichierC("../palmares.txt", ios::out);
+	ofstream fichierD("../personne.txt", ios::out);
+	ofstream fichierE("../parcours.txt", ios::out);
+	ofstream fichierF("../joueurs.txt", ios::out);
+	fichierA.close();
+	fichierB.close();
+	fichierC.close();
+	fichierD.close();
+	fichierE.close();
+	fichierF.close();
+	// Fin de l'effacement
+
 	for (it = liste.begin(); it != liste.end(); it++)
 	{
 		adresse1 = (*it)->getAdresseClub();
@@ -285,11 +362,11 @@ void Sauvegarde::EnregistrerClub(vector<Club*> liste) {
 		mois = IntToString((*it)->getAnnee()->getMois());
 		annee = IntToString((*it)->getAnnee()->getAnnee());
 
-		EnregistrerJoueur((*it)->getEffectif());
-		EnregistrerPersonne((*it)->getStaff());
-		EnregistrerPalmares((*it)->getPalmares());
-		EnregistrerContrat((*it)->getContrat());
-		EnregistrerRupture((*it)->getRupture());
+		EnregistrerJoueur((*it)->getEffectif(),nom1);
+		EnregistrerPersonne((*it)->getStaff(),nom1);
+		EnregistrerPalmares((*it)->getPalmares(),nom1);
+		EnregistrerContrat((*it)->getContrat(),nom1);
+		EnregistrerRupture((*it)->getRupture(),nom1);
 
 		adresseS = (*it)->getStadeDuClub()->getAdresse();
 		nomS = (*it)->getStadeDuClub()->getNom();

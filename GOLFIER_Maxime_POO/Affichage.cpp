@@ -13,7 +13,7 @@ void Affichage::choixPrincipal(LigueSoccer *lg, Calendrier *cal)
 		{
 		case 'A': choixClub(lg); break;
 		case 'B': choixTransf(lg,cal); break;
-		case 'C': CreerNegociation(lg); break;
+		case 'C': CreerNegociation(lg,cal); break;
 		case 'D': chargeAll(lg, cal); break;
 		case 'E': sauvAll(lg, cal); break;
 		default: break;
@@ -476,62 +476,32 @@ void Affichage::AfficherResClub(LigueSoccer * lg, Calendrier *cal)
 #pragma endregion TP2
 
 #pragma region TP3
-
-#pragma region thread
-//la définition du thread de l'acheteur
-DWORD WINAPI threadAcheteur(LPVOID acheteur)
-{
-	cout << "\n\n-------Entree dans le thread de l'acheteur-------\n\n" << endl;
-	((NegoAcheteur*)acheteur)->faireLeBusiness();
-	cout << "\n\n-------Sortie du thread de l'acheteur-------\n\n" << endl;
-	return 0;
-}
-
-//la définition du thread du vendeur
-DWORD WINAPI threadVendeur(LPVOID vendeur)
-{
-	cout << "\n\n-------Entree dans le thread du vendeur-------\n\n" << endl;
-	((NegoVendeur*)vendeur)->faireLeBusiness();
-	cout << "\n\n-------Sortie du thread du vendeur-------\n\n" << endl;
-	return 0;
-}
-
-#pragma endregion thread
-
-void Affichage::CreerNegociation(LigueSoccer * lg)
+void Affichage::CreerNegociation(LigueSoccer * lg, Calendrier *cal)
 {
 	int duree;
 	bool business;
 	Mutex m;
+	Negociation *n = new Negociation();
+	Thread *thread = new Thread();
 
 	cout << "---Creation de la negociation---\n";	
 	cout << "Veuillez indiquer la duree de la negociation\n";
 	cin >> duree;
 	cout << "\n---ACHETEUR---\n";
-	NegoAcheteur *acheteur = NouvObjet::nouvNegoAcheteur(lg,duree,m);
+	NegoAcheteur *acheteur = NouvObjet::nouvNegoAcheteur(lg,duree,m,n);
 	cout << "\n---VENDEUR---\n";
-	NegoVendeur *vendeur = NouvObjet::nouvNegoVendeur(lg,duree,m);
+	NegoVendeur *vendeur = NouvObjet::nouvNegoVendeur(lg,duree,m,n);
 
-	int nbreThread = 2;
-
-	//déclaration d'un tableau de thread. 
-	HANDLE *threads = new HANDLE[nbreThread];
-
-	//déclaration des identificateurs de thread.
-	DWORD *idThread1 = new DWORD();
-	DWORD *idThread2 = new DWORD();
-
-	//creation de deux threads
-	threads[0] = CreateThread(0, 0, threadAcheteur, acheteur, 0, idThread1);
-	threads[1] = CreateThread(0, 0, threadVendeur, vendeur, 0, idThread2);
-
-	//attendre jusqu'à ce que tous les threads terminent
-	WaitForMultipleObjects(nbreThread, threads, true, INFINITE);
-	
+	//on lance le thread de negociation entre l'acheteur et le vendeur
+	thread->launchThread(acheteur, vendeur);
+	//quand le thread est fini, on le supprime pour la gestion mémoire
+	delete thread;
+	//on verifie du côté de l'acheteur si le business a fonctionné...
 	business = acheteur->getSauv()->isOkay();
 
 	if (business) {
-		cout << "Creation d'un contrat pour le joueur signé !\n";
+		cout << "Creation dun contrat pour le joueur signe !\n";
+		TransacEngagement(lg, cal);
 	}
 }
 #pragma endregion TP3

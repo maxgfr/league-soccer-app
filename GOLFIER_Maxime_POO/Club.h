@@ -6,8 +6,6 @@
 #include "Joueur.h"
 #include "Stade.h"
 #include "Palmares.h"
-#include "Rupture.h"
-#include "Contrat.h"
 #include "Autonome.h"
 #include "Heteronome.h"
 class Rupture;
@@ -17,6 +15,7 @@ class Contrat;
 #include <vector>
 #include <algorithm>
 #include <memory>
+#include <string>
 using namespace std;
 
 class Club

@@ -547,7 +547,8 @@ Club * NouvObjet::nouvEquipeCherche(LigueSoccer *lg, Calendrier *cal)
 	Club *c = cal->getListeRencontre().at(res3)->getClubReceveur();
 	return c;
 }
-NegoAcheteur * NouvObjet::nouvNegoAcheteur(LigueSoccer * lg, int duree, Mutex m)
+
+NegoAcheteur * NouvObjet::nouvNegoAcheteur(LigueSoccer * lg, int duree, Mutex m, Negociation *nego)
 {
 	float montantDesire, montantMax;
 	cout << "Donner le montant desire pour l'acheteur\n";
@@ -556,10 +557,11 @@ NegoAcheteur * NouvObjet::nouvNegoAcheteur(LigueSoccer * lg, int duree, Mutex m)
 	cin >> montantMax;
 	Club *club = nouvClubCherch(lg);
 
-	NegoAcheteur *acheteur = new NegoAcheteur(montantDesire, montantMax, duree, club,m);
+	NegoAcheteur *acheteur = new NegoAcheteur(montantDesire, montantMax, duree, club,m,nego);
 	return acheteur;
 }
-NegoVendeur * NouvObjet::nouvNegoVendeur(LigueSoccer * lg, int duree, Mutex m)
+
+NegoVendeur * NouvObjet::nouvNegoVendeur(LigueSoccer * lg, int duree, Mutex m, Negociation *nego)
 {
 
 	float montantDesire, montantMin;
@@ -570,7 +572,7 @@ NegoVendeur * NouvObjet::nouvNegoVendeur(LigueSoccer * lg, int duree, Mutex m)
 	cin >> montantMin;
 	Club *club = nouvClubCherch(lg);
 
-	NegoVendeur *vendeur = new NegoVendeur(montantDesire, montantMin, duree, club,m);
+	NegoVendeur *vendeur = new NegoVendeur(montantDesire, montantMin, duree, club,m,nego);
 	return vendeur;
 }
 #pragma endregion nouveaux objets implicites

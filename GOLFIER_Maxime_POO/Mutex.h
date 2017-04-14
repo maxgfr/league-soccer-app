@@ -5,6 +5,7 @@
 
 class Mutex {
 
+private :
 	HANDLE unMutex;
 	void * unObjet;
 
@@ -12,22 +13,18 @@ public:
 	Mutex() {
 		unMutex = CreateMutex(NULL, false, NULL);
 	}
-	void Synchroniser() {
+
+	void Synchroniser() { 
 		WaitForSingleObject(unMutex, INFINITE);
 	}
 
-	void Liberer() {
+	void Liberer() { 
 		ReleaseMutex(unMutex);
-
 	}
 
-	void * getObjet() {
-		return unObjet;
-	}
+	void * getObjet() { return unObjet; }
 
-	void setObjet(void* unObj) {
-		unObjet = unObj;
-	}
+	void setObjet(void* unObj) { unObjet = unObj; }
 
 
 };

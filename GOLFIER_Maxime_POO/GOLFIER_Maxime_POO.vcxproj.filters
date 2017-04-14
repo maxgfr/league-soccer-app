@@ -67,12 +67,6 @@
     <Filter Include="Fichiers d%27en-tête\modele\individus\specification">
       <UniqueIdentifier>{b67df380-3ff7-446f-afbb-f888e3168296}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\gestion">
-      <UniqueIdentifier>{eed727bc-a09e-4a58-bba3-c6c6afcda962}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\gestion">
-      <UniqueIdentifier>{187af1ef-e590-4402-b2d2-71ba617c8a67}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers sources\systeme">
       <UniqueIdentifier>{9ed3825b-f513-4ffe-8ca7-9917748c8ab3}</UniqueIdentifier>
     </Filter>
@@ -177,9 +171,6 @@
     <ClInclude Include="Calendrier.h">
       <Filter>Fichiers d%27en-tête\modele</Filter>
     </ClInclude>
-    <ClInclude Include="Chargement.h">
-      <Filter>Fichiers d%27en-tête\gestion</Filter>
-    </ClInclude>
     <ClInclude Include="NouvObjet.h">
       <Filter>Fichiers d%27en-tête\view</Filter>
     </ClInclude>
@@ -206,6 +197,18 @@
     </ClInclude>
     <ClInclude Include="JoueurContract.h">
       <Filter>Fichiers d%27en-tête\modele\individus\specification</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Fichiers d%27en-tête\systeme</Filter>
+    </ClInclude>
+    <ClInclude Include="Chargement.h">
+      <Filter>Fichiers d%27en-tête\systeme</Filter>
+    </ClInclude>
+    <ClInclude Include="Sauvegarde.h">
+      <Filter>Fichiers d%27en-tête\systeme</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h">
+      <Filter>Fichiers d%27en-tête\systeme</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -287,9 +290,6 @@
     <ClCompile Include="Calendrier.cpp">
       <Filter>Fichiers sources\modele</Filter>
     </ClCompile>
-    <ClCompile Include="Chargement.cpp">
-      <Filter>Fichiers sources\gestion</Filter>
-    </ClCompile>
     <ClCompile Include="NouvObjet.cpp">
       <Filter>Fichiers sources\view</Filter>
     </ClCompile>
@@ -310,6 +310,15 @@
     </ClCompile>
     <ClCompile Include="JoueurContract.cpp">
       <Filter>Fichiers sources\modele\individus\specification</Filter>
+    </ClCompile>
+    <ClCompile Include="Chargement.cpp">
+      <Filter>Fichiers sources\systeme</Filter>
+    </ClCompile>
+    <ClCompile Include="Sauvegarde.cpp">
+      <Filter>Fichiers sources\systeme</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread.cpp">
+      <Filter>Fichiers sources\systeme</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

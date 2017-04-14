@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Rupture.h"
+#include "Club.h"
 
 #pragma region Constructeur
 Rupture::Rupture()

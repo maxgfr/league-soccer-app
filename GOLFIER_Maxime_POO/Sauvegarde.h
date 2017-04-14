@@ -1,6 +1,7 @@
 #pragma once
-#include <fstream>
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <vector>
 #include <string>
 #include <algorithm>
@@ -18,6 +19,7 @@
 #include "Calendrier.h"
 #include "Singleton.h"
 
+
 class Sauvegarde : public Singleton<Sauvegarde>
 {
 
@@ -27,17 +29,17 @@ private:
 	Sauvegarde() {}
 
 public:
-	void EnregistrerJoueur(vector<Joueur*>);
+	void EnregistrerJoueur(vector<Joueur*>,string);
 
-	void EnregistrerParcours(vector<Parcours*> liste);
+	void EnregistrerParcours(vector<Parcours*>,string);
 
-	void EnregistrerPersonne(vector<Personne*> liste);
+	void EnregistrerPersonne(vector<Personne*> liste, string);
 
-	void EnregistrerPalmares(vector<Palmares*>);
+	void EnregistrerPalmares(vector<Palmares*>, string);
 
-	void EnregistrerContrat(vector<Contrat*> liste);
+	void EnregistrerContrat(vector<Contrat*>, string);
 
-	void EnregistrerRupture(vector<Rupture*>);
+	void EnregistrerRupture(vector<Rupture*>, string);
 
 	void EnregistrerClub(vector<Club*> liste);
 

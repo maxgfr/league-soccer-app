@@ -1,9 +1,8 @@
 #ifndef JOUEURCONTRACT_H
 #define JOUEURCONTRACT_H
 
-#include "Contrat.h"
 #include "Sportif.h"
-class Contrat;
+#include "Contrat.h"
 
 class JoueurContract : public virtual Sportif
 {
@@ -13,7 +12,7 @@ protected:
 public:
 	JoueurContract();
 	JoueurContract(Contrat*, string, string);
-	~JoueurContract();
+	virtual ~JoueurContract();
 
 #pragma region Getter
 	Contrat* getContrat();

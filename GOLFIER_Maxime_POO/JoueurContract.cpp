@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "JoueurContract.h"
-
+#include "Contrat.h"
 
 JoueurContract::JoueurContract()
 {

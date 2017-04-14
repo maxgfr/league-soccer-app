@@ -17,7 +17,7 @@ public:
 #pragma region Constructeur
 	Sportif();
 	Sportif(string,string);
-	~Sportif();
+	virtual ~Sportif();
 #pragma region Constructeur
 
 #pragma region Getter

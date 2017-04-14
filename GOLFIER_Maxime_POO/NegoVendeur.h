@@ -8,7 +8,7 @@ class NegoVendeur : public Negociateur
 public:
 #pragma region Constructeur
 	NegoVendeur();
-	NegoVendeur(float, float, int, Club*,Mutex);
+	NegoVendeur(float, float, int, Club*,Mutex, Negociation*);
 	~NegoVendeur();
 #pragma endregion Constructeur
 

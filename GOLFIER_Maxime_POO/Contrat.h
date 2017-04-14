@@ -3,7 +3,7 @@
 
 #include "Reglement.h"
 #include "Date.h"
-#include "Club.h"
+class Joueur;
 class Club;
 
 class Contrat

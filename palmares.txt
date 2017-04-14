@@ -1,5 +1,5 @@
 club1
-liguedeschampions%1%15%03%2012%
+liguedeschampions%1%15%3%2012%
 FINclub1
 club2
 FINclub2

@@ -6,7 +6,7 @@ Negociateur::Negociateur()
 {
 }
 
-Negociateur::Negociateur(float mD, float mM, int d, Club *c, Mutex m)
+Negociateur::Negociateur(float mD, float mM, int d, Club *c, Mutex m, Negociation *sauv)
 {
 	setMontantDesire(mD);
 	setMontantMax(mM);
@@ -14,7 +14,6 @@ Negociateur::Negociateur(float mD, float mM, int d, Club *c, Mutex m)
 	setClubRepresentant(c);
 	setEtat(false);
 	setMutex(m);
-	sauv = new Negociation();
 	setSauv(sauv);
 }
 
@@ -22,7 +21,6 @@ Negociateur::Negociateur(float mD, float mM, int d, Club *c, Mutex m)
 Negociateur::~Negociateur()
 {
 	delete representantClub;
-	delete sauv;
 }
 #pragma endregion Constructeur
 

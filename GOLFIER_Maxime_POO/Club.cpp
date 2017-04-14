@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "Club.h"
+#include "Rupture.h"
+#include "Contrat.h"
 
 #pragma region Constructeur
 Club::Club() 
@@ -38,8 +40,12 @@ Club::Club(string nm, string hg, string cc, Date *d, vector<Joueur*> e, Stade *s
 
 Club::~Club()
 {
-	delete stadeDuClub;
-	delete anneeCreation;
+	if (stadeDuClub != nullptr) {
+		delete stadeDuClub;
+	}
+	if (anneeCreation != nullptr) {
+		delete anneeCreation;
+	}
 	for_each(effectif.begin(), effectif.end(), default_delete<Joueur>());
 	for_each(staff.begin(), staff.end(), default_delete<Personne>());
 	for_each(palmares.begin(), palmares.end(), default_delete<Palmares>());

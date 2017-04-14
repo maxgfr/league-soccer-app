@@ -27,7 +27,7 @@ protected:
 public:
 #pragma region Constructeur
 	Negociateur();
-	Negociateur(float, float, int, Club*,Mutex);
+	Negociateur(float, float, int, Club*,Mutex, Negociation*);
 	~Negociateur();
 #pragma endregion Constructeur
 

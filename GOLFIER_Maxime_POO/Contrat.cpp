@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Contrat.h"
+#include "Club.h"
 
 #pragma region Constructeur
 Contrat::Contrat()

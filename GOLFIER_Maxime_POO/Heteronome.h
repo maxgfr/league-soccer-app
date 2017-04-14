@@ -3,8 +3,6 @@
 
 #include "Joueur.h"
 #include "JoueurContract.h"
-class Contrat;
-class JoueurContract;
 
 class Heteronome : public JoueurContract, public Joueur
 {

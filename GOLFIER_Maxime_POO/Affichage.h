@@ -57,7 +57,7 @@ public:
 #pragma endregion TP2
 
 #pragma region TP3
-	static void CreerNegociation(LigueSoccer *lg);
+	static void CreerNegociation(LigueSoccer *lg, Calendrier *cal);
 #pragma endregion TP3
 
 #pragma region Chargement
