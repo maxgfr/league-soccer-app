@@ -79,6 +79,9 @@
     <Filter Include="Fichiers d%27en-tête\modele\negociation">
       <UniqueIdentifier>{6c4a48a1-d571-4df4-9cf5-1113dd989f59}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\exception">
+      <UniqueIdentifier>{94d4eea8-6811-41d8-964e-83cd75a92002}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -209,6 +212,9 @@
     </ClInclude>
     <ClInclude Include="Thread.h">
       <Filter>Fichiers d%27en-tête\systeme</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception_Chiffre.h">
+      <Filter>Fichiers d%27en-tête\exception</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -484,9 +484,34 @@ void Affichage::CreerNegociation(LigueSoccer * lg, Calendrier *cal)
 	Negociation *n = new Negociation();
 	Thread *thread = new Thread();
 
-	cout << "---Creation de la negociation---\n";	
+	cout << "---Creation de la negociation---\n";
 	cout << "Veuillez indiquer la duree de la negociation\n";
-	cin >> duree;
+
+	cin.exceptions(istream::failbit | istream::badbit);
+
+	try
+	{
+		cin >> duree;
+	}
+	catch (istream::failure e)
+	{
+		cerr << "Il faut un nombre !\n";
+		cin.clear();
+		cin.ignore((numeric_limits<streamsize>::max)(), '\n');
+		return;
+
+	}
+	
+	try {	
+		if (duree>10000) {
+			throw Exception_Chiffre("La duree est trop longue...");
+		}
+	}
+	catch (exception & e) {
+		cout << "Exception : " << e.what() << "\n";
+		return;
+		
+	}
 	cout << "\n---ACHETEUR---\n";
 	NegoAcheteur *acheteur = NouvObjet::nouvNegoAcheteur(lg,duree,m,n);
 	cout << "\n---VENDEUR---\n";

@@ -159,6 +159,7 @@
     <ClInclude Include="Enum_Type.h" />
     <ClInclude Include="Enum_Qualite.h" />
     <ClInclude Include="Equipe.h" />
+    <ClInclude Include="Exception_Chiffre.h" />
     <ClInclude Include="Heteronome.h" />
     <ClInclude Include="Joueur.h" />
     <ClInclude Include="JoueurContract.h" />

@@ -27,6 +27,7 @@
 #include "JoueurContract.h"
 #include "Sauvegarde.h"
 #include "Thread.h"
+#include "Exception_Chiffre.h"
 
 using namespace std;
 
